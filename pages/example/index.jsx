@@ -1,9 +1,10 @@
 import ExampleComponent from "./_components/exampleComponent";
+import styles from "./example.module.css";
 
 const Example = () => {
   return (
     <>
-      <div>example</div>
+      <div className={styles.container}>example</div>
       <ExampleComponent />
     </>
   );
