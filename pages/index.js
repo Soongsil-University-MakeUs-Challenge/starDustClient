@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ContextApi } from "../Contexts/contextApi";
+import { ContextApi } from "../context/contextApi";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {

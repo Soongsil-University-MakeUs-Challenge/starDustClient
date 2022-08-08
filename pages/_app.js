@@ -1,4 +1,4 @@
-import ContextStore from "../Context/contextApi";
+import ContextStore from "../context/contextApi";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
