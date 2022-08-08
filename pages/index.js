@@ -8,3 +8,11 @@ export default function Home() {
 
   return <div className={styles.container}>hello world</div>;
 }
+
+
+// Props
+// useState
+// useEffect
+// map, filter
+// ContextApi
+// localStorage
