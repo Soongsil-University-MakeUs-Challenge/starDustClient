@@ -1,7 +1,17 @@
+import { useContext } from "react";
+import { ContextApi } from "../../../context/contextApi";
+
+const test = [
+  { id: 1, name: "hahahaha" },
+  { id: 2, name: "cccc" },
+  { id: 3, name: "gggg" },
+];
 const ExampleComponent = () => {
-  const test = [1, 2, 3, 4, 5];
+  const { exCount } = useContext(ContextApi);
+
   return (
     <>
+      <div>{exCount}</div>
       <div>component</div>
     </>
   );
