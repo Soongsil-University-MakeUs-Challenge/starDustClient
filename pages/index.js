@@ -10,9 +10,10 @@ export default function Home() {
   const handleChangeExmaple = () => {
     setExample("hahahahah");
   };
+  
   return (
     <>
-    
+
       <Link href={"example"}>goToExmaple</Link>
       <button onClick={handleChangeExmaple}>tset</button>
       <div className={styles.container}>hello world</div>
