@@ -7,9 +7,10 @@
   min-height: 100vh;
   background-repeat: repeat-y;
   background-size: 100%;
+  overflow: scroll;
 }
 .container {
-  overflow: scroll;
+  /*overflow: scroll;*/
   max-width: 500px;
   padding: 20px 0;
   text-align: center;
@@ -34,6 +35,18 @@
   color: aliceblue;
   padding-top: 20px;
   font-family: "NeoDunggeunmo";
+  text-align: center;
+  margin: 0 auto;
+}
+
+.skipBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-family: "NeoDunggeunmo";
+  color: #F9E219;
+  font-size: 20px;
+
 }
 @keyframes fadein {
   0% {
