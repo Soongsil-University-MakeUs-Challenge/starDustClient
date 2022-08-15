@@ -1,9 +1,10 @@
-const { createContext, useState } = require("react");
+const { createContext, useState } = require('react')
 
-export const ContextApi = createContext(null);
+export const ContextApi = createContext(null)
 
 const ContextStore = (props) => {
-  const [example, setExample] = useState("hello context api");
+  const [example, setExample] = useState('hello context api')
+
   return (
     <ContextApi.Provider
       value={{
@@ -13,7 +14,7 @@ const ContextStore = (props) => {
     >
       {props.children}
     </ContextApi.Provider>
-  );
-};
+  )
+}
 
-export default ContextStore;
+export default ContextStore

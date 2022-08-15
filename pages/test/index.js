@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ContextApi } from '../../Context/contextApi'
 import Hong from './_components/Hong'
 import Yeon from './_components/Yeon'
 
 const Test = () => {
+  const { example } = useContext(ContextApi)
+  console.log(example)
+
   const [visible, setVisible] = useState(false)
   const [sso, setSso] = useState('')
 
