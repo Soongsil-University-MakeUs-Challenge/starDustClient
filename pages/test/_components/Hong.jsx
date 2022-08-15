@@ -1,4 +1,7 @@
 const Hong = ({ banana }) => {
+  localStorage.setItem('hong', 'honga')
+  const hong = localStorage.getItem('hong')
+  console.log(hong)
   return (
     <>
       <div>--------------------</div>
