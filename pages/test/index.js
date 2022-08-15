@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Test = () => {
-  const [sso, setSso] = useState('sssssssssssssssssssssso')
+  const [sso, setSso] = useState('')
   const [visible, setVisible] = useState(false)
 
   const handleSsoNameChange = (text) => {
@@ -16,6 +16,26 @@ const Test = () => {
       return !prev
     })
   }
+
+  // useEffect(() => {
+  //   console.log(
+  //     'ssssssssssssssssssssssssssssssssssoooooooooooooooooooooooooooo',
+  //   )
+  // }, [])
+
+  // useEffect(() => {
+  //   console.log(
+  //     'ssssssssssssssssssssssssssssssssssoooooooooooooooooooooooooooo',
+  //   )
+  // }, [sso])
+
+  useEffect(() => {
+    handleVisible()
+  }, [sso])
+
+  useEffect(() => {
+    handleVisible()
+  }, [])
 
   return (
     <>
