@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import Hong from './_components/Hong'
+import Yeon from './_components/Yeon'
 
 const Test = () => {
-  const [sso, setSso] = useState('')
   const [visible, setVisible] = useState(false)
+  const [sso, setSso] = useState('')
 
   const handleSsoNameChange = (text) => {
     setSso(text.target.value)
@@ -26,22 +28,23 @@ const Test = () => {
   // useEffect(() => {
   //   console.log(
   //     'ssssssssssssssssssssssssssssssssssoooooooooooooooooooooooooooo',
-  //   )
+  //   )hi
   // }, [sso])
 
-  useEffect(() => {
-    handleVisible()
-  }, [sso])
+  // useEffect(() => {
+  //   handleVisible()
+  // }, [])
 
-  useEffect(() => {
-    handleVisible()
-  }, [])
+  // useEffect(() => {
+  //   handleVisible()
+  // }, [])
 
   return (
     <>
-      {sso}
-      <input onChange={handleSsoNameChange} />
       <button onClick={handleVisible}>보여요 토글 버튼</button>
+      <input onChange={handleSsoNameChange} />
+      <Hong banana={sso} />
+      <Yeon banana={sso} />
       {visible && <div>보여요</div>}
     </>
   )
