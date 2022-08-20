@@ -10,6 +10,7 @@ export default function Login(){
         console.log(name, value)
         setCodeNumber( value )
         // 쏘 메롱
+        // 메롱메롱
     }
 
     return(
