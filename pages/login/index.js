@@ -14,7 +14,7 @@ export default function Login(){
     return(
         <div className={styles.background}>
             <div className={styles.logo_img}/>
-                <div><a className={styles.inputrequest}>Input your code number...</a>
+                <div><a className={styles.inputrequest}>Input your code number..</a>
                     <div>
                         <input
                             name="student-id"

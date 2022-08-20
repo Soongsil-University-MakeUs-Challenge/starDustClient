@@ -10,76 +10,60 @@
     overflow: scroll;
     
   }
-.container {
-    overflow: scroll;
-    /*overflow: scroll;*/
-    max-width: 500px;
-    padding: 20px 0;
-    text-align: center;
-  
-    color: aliceblue;
-    padding-top: 20px;
-    font-family: "NeoDunggeunmo";
-    text-align: center;
-    margin: 0 auto;
-  }
+
 .logo_img {
-    margin: 15px;
-    bottom: 100px;
-    width: 30vw;
     min-width: 200px; 
     max-width: 500px;
+    margin: 80px;
+    margin-top: 60px;
+    width: 326px;
     content: url(../public/startdust_logo.png);
-
   }
 
 .inputrequest{
-    min-width: 200px; 
-    max-width: 500px;
     text-align: left;
-    line-height: 1.5;
-    padding-right: 20px;
     font-family: "NeoDunggeunmo";
-    font-size: 10px;
-    color: aliceblue;
+    font-size: 16px;
+    color: #FFFFFF;
 }
 
 .inputBox{
-    margin: 7px;
+    margin-top: 10px;
+    margin-bottom: 8px;
     margin-left: 0;
-    color: aliceblue;
+    width: 334px;
+    color: #FFFFFF;
     background-color:transparent; /*배경 투명*/
-    border:1px solid #F9E219; /* 라인선 none 인 경우 아예 안보임*/
-    padding:5px; /* 상하좌우 크기는 여백으로 설정 */ 
-    padding-left: 15px;
-    font-size:18px; 
+    border:2px solid #F9E219; /* 라인선*/
+    padding:11px; /* 상하좌우 크기는 여백으로 설정 */ 
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size:24px; 
     font-family: "NeoDunggeunmo";
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .prove{
-    font-size:3px; 
+    font-size:14px; 
     font-family: "NeoDunggeunmo";
     color: aliceblue;
 }
 
 .loginBtn{
-    display:inline-block;
-    margin-top: 30px;
-    margin-bottom: 100px;
+    margin-top: 55px;
+    margin-bottom: 241px;
     text-align: center;
-    width: 30vw;
     font-family: "NeoDunggeunmo";
     color: #F9E219;
-    font-size: 13px;
+    font-size: 24px;
 }
 
 .ssumcLogo{
-    margin: 30px;
+    margin-bottom: 12px;
     text-align: center;
     font-family: "NeoDunggeunmo";
-    color: aliceblue;
-    font-size: 13px;
+    color: #FFFFFF;
+    font-size: 24px;
 }
 
 .startrequest{
@@ -101,7 +85,7 @@
   margin-left: 0;
   color: aliceblue;
   background-color:transparent; /*배경 투명*/
-  border:1px solid #F9E219; /* 라인선 none 인 경우 아예 안보임*/
+  border:2px solid #F9E219; /* 라인선 none 인 경우 아예 안보임*/
   padding:5px; /* 상하좌우 크기는 여백으로 설정 */ 
 
   font-size:18px; 
@@ -116,7 +100,7 @@
   margin-left: 0;
   color: aliceblue;
   background-color:transparent; /*배경 투명*/
-  border:1px solid aliceblue; /* 라인선 none 인 경우 아예 안보임*/
+  border:2px solid aliceblue; /* 라인선 none 인 경우 아예 안보임*/
   padding:5px; /* 상하좌우 크기는 여백으로 설정 */ 
   font-size:18px; 
   font-family: "NeoDunggeunmo";
