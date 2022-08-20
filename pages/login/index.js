@@ -9,6 +9,7 @@ export default function Login(){
         const { name, value } = e.target
         console.log(name, value)
         setCodeNumber( value )
+        // 쏘 메롱
     }
 
     return(
