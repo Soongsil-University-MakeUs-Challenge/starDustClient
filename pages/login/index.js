@@ -3,7 +3,6 @@ import { func } from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/Login.module.css";
 
-
 export default function Login(){
     const [codeNumber, setCodeNumber] = useState("");
     const onChange = (e) => {
