@@ -12,36 +12,46 @@ export default function Login() {
   };
 
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
+  const [isBye, setIsBye] = useState(false);
 
   const onLoginChange = () => {
     setIsLoginSuccess((prev) => !prev);
+  };
+
+  const onByeChange = () => {
+    setIsBye((prev) => !prev);
+    setIsLoginSuccess(false);
   };
 
   console.log(isLoginSuccess);
 
   return (
     <div className={styles.background}>
-      <div className={styles.logo_img} />
-      {!isLoginSuccess && (
+      {!isBye && (
         <div>
-          <a className={styles.inputrequest}>Input your code number..</a>
-          <div>
-            <input
-              name="student-id"
-              type="text"
-              value={codeNumber}
-              className={styles.inputBox}
-              onChange={onChange}
-              placeholder="code number"
-            />
+          <div className={styles.logo_img} />
+          {!isLoginSuccess && (
+            <div>
+              <a className={styles.inputrequest}>Input your code number..</a>
+              <div>
+                <input
+                  name="student-id"
+                  type="text"
+                  value={codeNumber}
+                  className={styles.inputBox}
+                  onChange={onChange}
+                  placeholder="code number"
+                />
 
-            <div className={styles.prove}>
-              <a>
-                <span style={{ color: "#F9E219" }}>학번</span>으로 대숭실대
-                우주전사임을 증명해주세요!
-              </a>
+                <div className={styles.prove}>
+                  <a>
+                    <span style={{ color: "#F9E219" }}>학번</span>으로 대숭실대
+                    우주전사임을 증명해주세요!
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
 
@@ -65,12 +75,17 @@ export default function Login() {
       )}
       {isLoginSuccess && (
         <div>
-          <button className={styles.awayBtn} onClick={onLoginChange}>
+          <button className={styles.awayBtn} onClick={onByeChange}>
             Run away?
           </button>
         </div>
       )}
 
+      {isBye && (
+        <div className={styles.startrequest}>
+          <a>Okay, Bye...</a>
+        </div>
+      )}
       <div className={styles.ssumcLogo}>
         <a>SSUMC</a>
       </div>
