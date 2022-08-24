@@ -1,0 +1,85 @@
+.map {
+    min-height: 100vh;
+    max-width: 100vh;
+}
+.stardust_container {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 410px;
+}
+
+.stardust_black {
+    display: inline-block;
+    content: url(../public/wanted-stardust-black.png);
+    margin: 5px;
+}
+.stardust_yellow {
+    display: inline-block;
+    content: url(../public/wanted-stardust-yellow.png);
+    margin: 5px;
+}
+.stardust_blue {
+    display: inline-block;
+    content: url(../public/wanted-stardust-blue.png);
+    margin: 5px;
+}
+.stardust_purple {
+    display: inline-block;
+    content: url(../public/wanted-stardust-purple.png);
+    margin: 5px;
+}
+.stardust_red {
+    display: inline-block;
+    content: url(../public/wanted-stardust-red.png);
+    margin: 5px;
+}
+.map_logo {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    content: url(../public/logo_small.png);
+}
+.button_container {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 50px;
+    right: 50px;
+    width: 128px;
+    height: 128px;
+    justify-content: space-between;
+
+}
+.guide_btn {
+    display: inline-flex;
+    content: url(../public/guide-button.png);
+    width: 45px;
+    height: 45px;
+    margin-top: 20px;
+}
+.location_btn{
+    display: inline-flex;
+    content: url(../public/my-location-button.png);
+    width: 45px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.refresh_btn {
+    display: inline-flex;
+    content: url(../public/refresh-button.png);
+    width: 45px;
+    height: 45px;
+
+
+}
+.qr_btn {
+    display: inline-flex;
+    content: url(../public/qr-button.png);
+    width: 65px;
+    height: 65px;
+
+}
