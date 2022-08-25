@@ -23,8 +23,6 @@ export default function Login() {
     setIsLoginSuccess(false);
   };
 
-  console.log(isLoginSuccess);
-
   return (
     <div className={styles.background}>
       {!isBye && (
@@ -32,8 +30,9 @@ export default function Login() {
           <div className={styles.logo_img} />
           {!isLoginSuccess && (
             <div>
-              <a className={styles.inputrequest}>Input your code number..</a>
               <div>
+                <a className={styles.inputrequest}>Input your code number..</a>{" "}
+                <br />
                 <input
                   name="student-id"
                   type="text"
@@ -42,53 +41,38 @@ export default function Login() {
                   onChange={onChange}
                   placeholder="code number"
                 />
-
-                <div className={styles.prove}>
-                  <a>
-                    <span style={{ color: "#F9E219" }}>학번</span>으로 대숭실대
-                    우주전사임을 증명해주세요!
-                  </a>
+                <br />
+                <a className={styles.prove}>
+                  <span style={{ color: "#F9E219" }}>학번</span>으로 대숭실대
+                  우주전사임을 증명해주세요!
+                </a>
+                <div className={styles.loginBtn} onClick={onLoginChange}>
+                  Login{">"}
                 </div>
               </div>
             </div>
           )}
+          {isLoginSuccess && (
+            <div>
+              <a className={styles.startrequest}>
+                Do you want to go <br /> hunting stardust?
+              </a>
+              <br />
+              <button className={styles.goBtn}>Go!</button>
+              <br />
+              <button className={styles.awayBtn} onClick={onByeChange}>
+                Run away?
+              </button>
+            </div>
+          )}
         </div>
       )}
-
-      {!isLoginSuccess && (
-        <div className={styles.loginBtn} onClick={onLoginChange}>
-          Login{">"}
-        </div>
-      )}
-
-      {isLoginSuccess && (
-        <div className={styles.startrequest}>
-          <a>
-            Do you want to go <br /> hunting stardust?
-          </a>
-        </div>
-      )}
-      {isLoginSuccess && (
-        <div>
-          <button className={styles.goBtn}>Go!</button>
-        </div>
-      )}
-      {isLoginSuccess && (
-        <div>
-          <button className={styles.awayBtn} onClick={onByeChange}>
-            Run away?
-          </button>
-        </div>
-      )}
-
       {isBye && (
-        <div className={styles.startrequest}>
+        <div className={styles.okBye}>
           <a>Okay, Bye...</a>
         </div>
       )}
-      <div className={styles.ssumcLogo}>
-        <a>SSUMC</a>
-      </div>
+      <a className={styles.ssumcLogo}>SSUMC</a>
     </div>
   );
 }

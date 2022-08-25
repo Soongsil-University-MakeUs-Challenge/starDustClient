@@ -6,14 +6,14 @@
   background: url(../public/background_image.png);
   min-height: 100vh;
   background-repeat: repeat-y;
-  background-size: 100%;
+  background-size: 200%;
   overflow: scroll;
 }
 
 .logo_img {
   min-width: 200px;
   max-width: 500px;
-  margin: 80px;
+  margin-bottom: 80px;
   margin-top: 60px;
   width: 326px;
   content: url(../public/startdust_logo.png);
@@ -66,44 +66,47 @@
 }
 
 .startrequest {
-  min-width: 200px;
-  max-width: 500px;
   text-align: left;
-  line-height: 1;
-  padding-bottom: 10px;
   font-family: "NeoDunggeunmo";
-  font-size: 15px;
+  font-size: 26px;
   color: aliceblue;
 }
 
 .goBtn {
-  min-width: 200px;
-  max-width: 500px;
+  width: 334px;
   display: inline-block;
-  margin: 5px;
+  margin-top: 30px;
   margin-left: 0;
-  color: aliceblue;
+  color: #ffffff;
   background-color: transparent; /*배경 투명*/
   border: 2px solid #f9e219; /* 라인선 none 인 경우 아예 안보임*/
   padding: 5px; /* 상하좌우 크기는 여백으로 설정 */
-
-  font-size: 18px;
+  font-size: 35px;
   font-family: "NeoDunggeunmo"; /*글씨체*/
-  border-radius: 3px; /*둥글게 표현*/
+  border-radius: 4px; /*둥글게 표현*/
+  background-color: rgba(249, 226, 25, 0.1);
 }
 
 .awayBtn {
-  min-width: 200px;
-  max-width: 500px;
-  margin: 5px;
-  margin-left: 0;
-  color: aliceblue;
+  width: 334px;
+  margin-bottom: 215px;
+  margin-top: 15px;
+  color: #ffffff;
   background-color: transparent; /*배경 투명*/
   border: 2px solid aliceblue; /* 라인선 none 인 경우 아예 안보임*/
   padding: 5px; /* 상하좌우 크기는 여백으로 설정 */
-  font-size: 18px;
+  font-size: 35px;
   font-family: "NeoDunggeunmo";
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+.okBye {
+  margin-top: 407px;
+  margin-bottom: 371px;
+  text-align: left;
+  font-family: "NeoDunggeunmo";
+  font-size: 26px;
+  color: aliceblue;
 }
 
 @font-face {
