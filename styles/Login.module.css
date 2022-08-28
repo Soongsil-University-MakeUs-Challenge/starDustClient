@@ -42,6 +42,10 @@
   border-radius: 4px;
 }
 
+.inputBox::placeholder {
+  color: #d9d9d9;
+}
+
 .prove {
   font-size: 14px;
   font-family: "NeoDunggeunmo";

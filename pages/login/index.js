@@ -5,10 +5,17 @@ import styles from "../../styles/Login.module.css";
 
 export default function Login() {
   const [codeNumber, setCodeNumber] = useState("");
-  const onChange = (e) => {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const onNicknameChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
     setCodeNumber(value);
+  };
+
+  const onPhoneChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value);
+    setPhoneNumber(value);
   };
 
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
@@ -31,21 +38,34 @@ export default function Login() {
           {!isLoginSuccess && (
             <div>
               <div>
-                <a className={styles.inputrequest}>Input your code number..</a>{" "}
+                <a className={styles.inputrequest}>
+                  Input your{" "}
+                  <span style={{ color: "#F9E219" }}>nickname..</span>
+                </a>
                 <br />
                 <input
-                  name="student-id"
+                  name="student-nickname"
                   type="text"
                   value={codeNumber}
                   className={styles.inputBox}
-                  onChange={onChange}
-                  placeholder="code number"
+                  onChange={onNicknameChange}
+                  placeholder="nickname"
                 />
                 <br />
-                <a className={styles.prove}>
-                  <span style={{ color: "#F9E219" }}>학번</span>으로 대숭실대
-                  우주전사임을 증명해주세요!
+                <a className={styles.inputrequest}>
+                  Input your <span style={{ color: "#F9E219" }}>phone </span>
+                  number..
                 </a>
+                <br />
+                <input
+                  name="student-phonenumber"
+                  type="text"
+                  value={phoneNumber}
+                  className={styles.inputBox}
+                  onChange={onPhoneChange}
+                  placeholder="phone number"
+                />
+                <br />
                 <div className={styles.loginBtn} onClick={onLoginChange}>
                   Login{">"}
                 </div>
