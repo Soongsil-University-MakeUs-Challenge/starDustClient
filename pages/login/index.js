@@ -6,6 +6,7 @@ import styles from "../../styles/Login.module.css";
 export default function Login() {
   const [codeNumber, setCodeNumber] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
   const onNicknameChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
@@ -20,6 +21,7 @@ export default function Login() {
 
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
   const [isBye, setIsBye] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const onLoginChange = () => {
     setIsLoginSuccess((prev) => !prev);
@@ -30,6 +32,10 @@ export default function Login() {
     setIsLoginSuccess(false);
   };
 
+  const onErrorChange = () => {
+    setIsError((prev) => !prev);
+  };
+
   return (
     <div className={styles.background}>
       {!isBye && (
@@ -38,11 +44,10 @@ export default function Login() {
           {!isLoginSuccess && (
             <div>
               <div>
-                <a className={styles.inputrequest}>
+                <div className={styles.inputrequest}>
                   Input your{" "}
                   <span style={{ color: "#F9E219" }}>nickname..</span>
-                </a>
-                <br />
+                </div>
                 <input
                   name="student-nickname"
                   type="text"
@@ -51,21 +56,30 @@ export default function Login() {
                   onChange={onNicknameChange}
                   placeholder="nickname"
                 />
-                <br />
-                <a className={styles.inputrequest}>
+                {isError && (
+                  <div className={styles.errormessage}>
+                    숫자, 특수문자를 제외한 1~8글자를 입력해주세요
+                  </div>
+                )}
+                <div className={styles.inputrequest}>
                   Input your <span style={{ color: "#F9E219" }}>phone </span>
                   number..
-                </a>
-                <br />
-                <input
-                  name="student-phonenumber"
-                  type="text"
-                  value={phoneNumber}
-                  className={styles.inputBox}
-                  onChange={onPhoneChange}
-                  placeholder="phone number"
-                />
-                <br />
+                </div>
+                <div>
+                  <input
+                    name="student-phonenumber"
+                    type="text"
+                    value={phoneNumber}
+                    className={styles.inputBox}
+                    onChange={onPhoneChange}
+                    placeholder="phone number"
+                  />
+                  {isError && (
+                    <div className={styles.errormessage}>
+                      휴대폰번호가 올바르지 않아요
+                    </div>
+                  )}
+                </div>
                 <div className={styles.loginBtn} onClick={onLoginChange}>
                   Login{">"}
                 </div>
