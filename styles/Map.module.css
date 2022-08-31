@@ -8,6 +8,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     min-width: 410px;
+    z-index: 2;
 }
 
 .stardust_black {
@@ -39,7 +40,8 @@
     position: fixed;
     bottom: 50px;
     left: 50px;
-    content: url(../public/img_rank.png);
+    content: url(../public/img_rank.svg);
+    z-index: 2;
 }
 .button_container {
     position: fixed;
@@ -50,6 +52,7 @@
     width: 128px;
     height: 128px;
     justify-content: space-between;
+    z-index: 2;
 
 }
 .guide_btn {

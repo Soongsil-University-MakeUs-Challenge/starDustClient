@@ -1,13 +1,11 @@
 import styles from "../../styles/Map.module.css";
 import NaverAPIMap from "./NaverAPIMap";
-import Script from 'next/script'
+
 
 export default function Map() {
     return (
     <>
-    
-    
-        <NaverAPIMap>
+        <NaverAPIMap/>
         <div className={styles.stardust_container}>
             <div className={styles.stardust_black}></div>
             <div className={styles.stardust_yellow}></div>
@@ -26,7 +24,7 @@ export default function Map() {
             <div className={styles.qr_btn}></div>
 
         </div>
-        </NaverAPIMap>
+        
         </>
         
     );
