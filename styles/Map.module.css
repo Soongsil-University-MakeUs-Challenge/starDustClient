@@ -39,7 +39,7 @@
     position: fixed;
     bottom: 50px;
     left: 50px;
-    content: url(../public/logo_small.png);
+    content: url(../public/img_rank.png);
 }
 .button_container {
     position: fixed;

@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/Map.module.css";
+import NaverAPIMap from "./NaverAPIMap";
+
 
 export default function Map() {
-
-    
-
     return (
-    <div className={styles.map}>
+    <>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1664a34e52ea5802af4d289cbdeef3ed"/>
+    
+        <NaverAPIMap>
         <div className={styles.stardust_container}>
             <div className={styles.stardust_black}></div>
             <div className={styles.stardust_yellow}></div>
@@ -25,7 +27,10 @@ export default function Map() {
             <div className={styles.qr_btn}></div>
 
         </div>
-
-    </div>
+        </NaverAPIMap>
+        </>
+        
     );
+
+    
 }
