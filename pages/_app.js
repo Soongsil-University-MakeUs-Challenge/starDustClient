@@ -5,9 +5,6 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <ContextStore>
-      <Script src=""
-              strategy="beforeInteractive"
-              />
       <Component {...pageProps} />
     </ContextStore>
   );
