@@ -9,6 +9,8 @@
     transform: translate(-50%, 0);
     min-width: 410px;
     z-index: 2;
+    margin:0 auto;
+    text-align: center;
 }
 
 .stardust_black {
@@ -39,7 +41,7 @@
 .map_logo {
     position: fixed;
     bottom: 50px;
-    left: 50px;
+    left: 20px;
     content: url(../public/img_rank.svg);
     z-index: 2;
 }
@@ -48,7 +50,7 @@
     display: flex;
     flex-wrap: wrap;
     bottom: 50px;
-    right: 50px;
+    right: 20px;
     width: 128px;
     height: 128px;
     justify-content: space-between;
@@ -57,14 +59,14 @@
 }
 .guide_btn {
     display: inline-flex;
-    content: url(../public/guide-button.png);
+    content: url(../public/guide-button.svg);
     width: 45px;
     height: 45px;
     margin-top: 20px;
 }
 .location_btn{
     display: inline-flex;
-    content: url(../public/my-location-button.png);
+    content: url(../public/my-location-button.svg);
     width: 45px;
     height: 45px;
     margin-top: 20px;
@@ -73,7 +75,7 @@
 }
 .refresh_btn {
     display: inline-flex;
-    content: url(../public/refresh-button.png);
+    content: url(../public/refresh-button.svg);
     width: 45px;
     height: 45px;
 
@@ -81,7 +83,7 @@
 }
 .qr_btn {
     display: inline-flex;
-    content: url(../public/qr-button.png);
+    content: url(../public/qr-button.svg);
     width: 65px;
     height: 65px;
 
