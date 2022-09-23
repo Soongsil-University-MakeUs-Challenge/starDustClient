@@ -1,5 +1,5 @@
 import styles from "../../styles/Map.module.css";
-import NaverAPIMap from "./NaverAPIMap";
+import NaverAPIMap from "./_components/NaverAPIMap";
 
 
 export default function Map() {
