@@ -15,13 +15,9 @@
     "next-qrcode": "^2.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-<<<<<<< HEAD
-    "react-kakao-maps-sdk": "^1.1.3"
-=======
     "react-kakao-maps-sdk": "^1.1.3",
     "react-naver-maps": "^0.0.13",
     "react-qr-reader": "^3.0.0-beta-1"
->>>>>>> 5719238f21a894d008a2a9bc002d16fddff56bc9
   },
   "devDependencies": {
     "eslint": "8.21.0",

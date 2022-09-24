@@ -1,0 +1,21 @@
+.map {
+  min-height: 100vh;
+  max-width: 100vh;
+}
+
+.container {
+  /*overflow: scroll;*/
+  max-width: 500px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.send_location {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  content: url(../public/img_send_location.png);
+  z-index: 2;
+}
