@@ -1,0 +1,115 @@
+.map {
+  min-height: 100vh;
+  max-width: 100vh;
+}
+.stardust_container {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: 410px;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stardust_black {
+  display: inline-block;
+  content: url(../public/wanted-stardust-black.png);
+  margin: 5px;
+}
+.stardust_yellow {
+  display: inline-block;
+  content: url(../public/wanted-stardust-yellow.png);
+  margin: 5px;
+}
+.stardust_blue {
+  display: inline-block;
+  content: url(../public/wanted-stardust-blue.png);
+  margin: 5px;
+}
+.stardust_purple {
+  display: inline-block;
+  content: url(../public/wanted-stardust-purple.png);
+  margin: 5px;
+}
+.stardust_red {
+  display: inline-block;
+  content: url(../public/wanted-stardust-red.png);
+  margin: 5px;
+}
+.map_logo {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  content: url(../public/img_rank.svg);
+  z-index: 2;
+}
+.button_container {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  bottom: 50px;
+  right: 20px;
+  width: 128px;
+  height: 128px;
+  justify-content: space-between;
+  z-index: 2;
+}
+.guide_btn {
+  display: inline-flex;
+  content: url(../public/guide-button.svg);
+  width: 45px;
+  height: 45px;
+  margin-top: 20px;
+}
+.location_btn {
+  display: inline-flex;
+  content: url(../public/my-location-button.svg);
+  width: 45px;
+  height: 45px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.refresh_btn {
+  display: inline-flex;
+  content: url(../public/refresh-button.svg);
+  width: 45px;
+  height: 45px;
+}
+.qr_btn {
+  display: inline-flex;
+  content: url(../public/qr-button.svg);
+  width: 65px;
+  height: 65px;
+}
+
+.dust_black {
+  content: url(../public/img-dust-black.svg);
+  width: 40px;
+  height: 40px;
+}
+
+.dust_white {
+  content: url(../public/img-dust-white.svg);
+  width: 40px;
+  height: 40px;
+}
+
+.dust_green {
+  content: url(../public/img-dust-green.svg);
+  width: 40px;
+  height: 40px;
+}
+
+.dust_orange {
+  content: url(../public/img-dust-orange.svg);
+  width: 40px;
+  height: 40px;
+}
+
+.dust_purple {
+  content: url(../public/img-dust-purple.svg);
+  width: 40px;
+  height: 40px;
+}

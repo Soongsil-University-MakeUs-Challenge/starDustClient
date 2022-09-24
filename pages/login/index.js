@@ -3,8 +3,10 @@ import { func } from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import { login } from "../../apis";
 import styles from "../../styles/Login.module.css";
+import { useRouter } from "next/router";
 
 export default function Login() {
+  const router = useRouter();
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [nicknameError, setNicknameError] = useState("");
@@ -30,11 +32,12 @@ export default function Login() {
     setIsLoginSuccess((prev) => !prev);
   };
 
-  const onClickLogin = async (isSuccess) => {
+  const onClickLogin = async () => {
     console.log(nickname + phoneNumber);
     const regexNickname = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|]+$/;
     const regexPhoneNumberLength = /^[0-9]+$/;
     const regexPhoneNumber = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
+    let isValidate = true;
 
     // 벨리데이션
     if (
@@ -44,6 +47,7 @@ export default function Login() {
         regexNickname.test(nickname)
       )
     ) {
+      isValidate = false;
       setNicknameError("숫자, 특수문자를 제외한 1~8글자를 입력해주세요");
     } else {
       setNicknameError("");
@@ -56,14 +60,16 @@ export default function Login() {
         regexPhoneNumber.test(phoneNumber)
       )
     ) {
+      isValidate = false;
       setPhoneNumberError("휴대폰번호가 올바르지 않아요");
     } else {
       setPhoneNumberError("");
     }
 
-    //const response = await login(codeNumber, phoneNumber)
+    // if (nicknameError.length > 0 || phoneNumberError.length > 0) return;
 
-    if (isSuccess) {
+    if (isValidate) {
+      // const response = await login(codeNumber, phoneNumber)
       setIsLoginSuccess((prev) => !prev);
     } else {
     }
@@ -114,10 +120,7 @@ export default function Login() {
                   />
                   <div className={styles.errormessage}>{phoneNumberError}</div>
                 </div>
-                <div
-                  className={styles.loginBtn}
-                  onClick={() => onClickLogin(false)}
-                >
+                <div className={styles.loginBtn} onClick={() => onClickLogin()}>
                   Login{">"}
                 </div>
               </div>
@@ -125,13 +128,12 @@ export default function Login() {
           )}
           {isLoginSuccess && (
             <div>
-              <a className={styles.startrequest}>
+              <div className={styles.startrequest}>
                 Do you want to go <br /> hunting stardust?
-              </a>
-              <br />
+              </div>
               <button
                 className={styles.goBtn}
-                onClick={() => router.push("/..")}
+                onClick={() => router.push("/../map")}
               >
                 Go!
               </button>
