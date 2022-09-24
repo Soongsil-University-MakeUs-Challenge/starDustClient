@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "build": "next build",
+    "build": "CI= next build",
     "start": "next start",
     "prepare": "sh init-https.sh",
     "lint": "next lint"
