@@ -31,30 +31,43 @@ export default function Login() {
   };
 
   const onClickLogin = async (isSuccess) => {
-    console.log(nickname + phoneNumber)
-    const regexNickname = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|]+$/
+    console.log(nickname + phoneNumber);
+    const regexNickname = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|]+$/;
+    const regexPhoneNumberLength = /^[0-9]+$/;
+    const regexPhoneNumber = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
 
     // 벨리데이션
-    if (!(nickname.length >= 1 && nickname.length <= 8 && regexNickname.test(nickname))) {
-      setNicknameError("숫자, 특수문자를 제외한 1~8글자를 입력해주세요")
+    if (
+      !(
+        nickname.length >= 1 &&
+        nickname.length <= 8 &&
+        regexNickname.test(nickname)
+      )
+    ) {
+      setNicknameError("숫자, 특수문자를 제외한 1~8글자를 입력해주세요");
     } else {
-      setNicknameError("")
+      setNicknameError("");
     }
-    
-    if( phoneNumber.length == 0) {
-      setPhoneNumberError("휴대폰번호가 올바르지 않아요")
+
+    if (
+      !(
+        phoneNumber.length == 11 &&
+        regexPhoneNumberLength.test(phoneNumber) &&
+        regexPhoneNumber.test(phoneNumber)
+      )
+    ) {
+      setPhoneNumberError("휴대폰번호가 올바르지 않아요");
     } else {
-      setPhoneNumberError("")
+      setPhoneNumberError("");
     }
-    
+
     //const response = await login(codeNumber, phoneNumber)
-      
+
     if (isSuccess) {
-        setIsLoginSuccess((prev) => !prev);
+      setIsLoginSuccess((prev) => !prev);
     } else {
-    
     }
-  }
+  };
 
   const onByeChange = () => {
     setIsBye((prev) => !prev);
@@ -85,11 +98,7 @@ export default function Login() {
                   onChange={onNicknameChange}
                   placeholder="nickname"
                 />
-                {nicknameError && (
-                  <div className={styles.errormessage}>
-                    {nicknameError}
-                  </div>
-                )}
+                <div className={styles.errormessage}>{nicknameError}</div>
                 <div className={styles.inputrequest}>
                   Input your <span style={{ color: "#F9E219" }}>phone </span>
                   number..
@@ -103,13 +112,12 @@ export default function Login() {
                     onChange={onPhoneChange}
                     placeholder="phone number"
                   />
-                  {phoneNumberError && (
-                    <div className={styles.errormessage}>
-                      {phoneNumberError}
-                    </div>
-                  )}
+                  <div className={styles.errormessage}>{phoneNumberError}</div>
                 </div>
-                <div className={styles.loginBtn} onClick={() => onClickLogin(false)}>
+                <div
+                  className={styles.loginBtn}
+                  onClick={() => onClickLogin(false)}
+                >
                   Login{">"}
                 </div>
               </div>
@@ -121,7 +129,12 @@ export default function Login() {
                 Do you want to go <br /> hunting stardust?
               </a>
               <br />
-              <button className={styles.goBtn}>Go!</button>
+              <button
+                className={styles.goBtn}
+                onClick={() => router.push("/..")}
+              >
+                Go!
+              </button>
               <br />
               <button className={styles.awayBtn} onClick={onByeChange}>
                 Run away?

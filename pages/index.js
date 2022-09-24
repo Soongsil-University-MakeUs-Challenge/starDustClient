@@ -40,7 +40,9 @@ export default function Home() {
         <div className={styles.logo_img} />
         <div className={styles.content}>{outputText}</div>
       </div>
-      <div className={styles.skipBtn}><a href="/">SKIP{">"}</a></div>
+      <div className={styles.skipBtn}>
+        <a href="/login">SKIP{">"}</a>
+      </div>
     </div>
   );
 }

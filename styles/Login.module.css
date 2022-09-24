@@ -13,7 +13,6 @@
 .logo_img {
   min-width: 200px;
   max-width: 500px;
-  margin-bottom: 80px;
   margin-top: 60px;
   width: 326px;
   content: url(../public/startdust_logo.png);
@@ -24,10 +23,10 @@
   font-family: "NeoDunggeunmo";
   font-size: 16px;
   color: #ffffff;
+  margin-top: 30px;
 }
 
 .inputBox {
-  margin-top: 10px;
   margin-left: 0;
   width: 334px;
   color: #ffffff;
@@ -39,6 +38,7 @@
   font-size: 24px;
   font-family: "NeoDunggeunmo";
   border-radius: 4px;
+  margin-top: 12px;
 }
 
 .inputBox::placeholder {
@@ -46,8 +46,8 @@
 }
 
 .errormessage {
+  height: 12px;
   margin-top: 6px;
-  margin-bottom: 17px;
   text-align: left;
   font-family: "NeoDunggeunmo";
   font-size: 12px;
@@ -55,8 +55,8 @@
 }
 
 .loginBtn {
-  margin-top: 55px;
-  margin-bottom: 241px;
+  margin-top: 35px;
+  margin-bottom: 213px;
   text-align: center;
   font-family: "NeoDunggeunmo";
   color: #f9e219;
