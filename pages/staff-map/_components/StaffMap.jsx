@@ -49,7 +49,11 @@ export const KakaoAPIMap = () => {
   return (
     <Map center={{ lat: 37.496313, lng: 126.957037 }}style={{ width: "100%", height: "100vh" }}>
 
-      
+      {dusts.map((dust) => {
+          return <CustomOverlayMap key={dust.dustId} position={{ lat: dust.latitude, lng: dust.longitude }}>
+                    <div className={dustMapper[dust.dustId]}></div>
+                 </CustomOverlayMap>
+      })}
     </Map>
   )
 };
