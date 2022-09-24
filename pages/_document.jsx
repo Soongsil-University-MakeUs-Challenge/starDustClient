@@ -23,10 +23,7 @@ export default class MyDocument extends Document {
     return (
         <Html lang="ko">
           <Head />
-          <script
-            type="text/javascript"
-            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoMapKey}&libraries=services`}
-          />
+          <script type="text/javascript" src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoMapKey}&libraries=services`}/>
           <body>
           <Main />
           <NextScript />
