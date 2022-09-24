@@ -5,6 +5,26 @@ import styles from "../../styles/StaffMap.module.css";
 
 export default function StaffMapPage() {
     const router = useRouter()
+    const [myLocation, setMyLocation] = useState('');
+  
+    useEffect(() => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setMyLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        });
+      } else {
+        window.alert('현재 위치를 알 수 없어 기본 위치로 지정합니다.');
+        setMyLocation({ latitude: 37.4862618, longitude: 127.1222903 });
+      }
+    }, []);
+  
+    useEffect(() => {
+        const [latitude, longitude] = myLocation
+        console.log(`위도 ${latitude}, 경도: ${longitude}`);
+    });
 
     return (
         <>

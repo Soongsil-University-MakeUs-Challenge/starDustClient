@@ -72,7 +72,6 @@ export const KakaoAPIMap = () => {
       currentPosition = [myLocation.latitude, myLocation.longitude];
       console.log(currentPosition[0], currentPosition[1]);
     }
-
   });
 
 
@@ -84,6 +83,7 @@ export const KakaoAPIMap = () => {
             <div className={dustMapper[dust.dustId]}></div>
           </CustomOverlayMap>
       })}
+
     </Map>
   )
 };
