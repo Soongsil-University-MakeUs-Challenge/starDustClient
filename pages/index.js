@@ -7,6 +7,8 @@ export default function Home() {
   const [count, setCount] = useState(0); // 글자 수 카운터 변수
   const scrollRef = useRef();
 
+  console.log(process.env.NEXT_PUBLIC_MAP_KEY)
+
   useEffect(() => {
     const textInterval = setInterval(() => {
       if (count < totalText.length) {
