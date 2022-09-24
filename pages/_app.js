@@ -1,4 +1,5 @@
-import ContextStore from "../Context/contextApi";
+import ContextStore from "../Contexts/contextApi";
+import Script from 'next/script'
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -10,3 +11,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
