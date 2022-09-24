@@ -3,7 +3,7 @@ import axios from "axios";
 // export const getToken = () => localStorage.getItem('access_token') ?? null
 
 export const statDustAPI = axios.create({
-    baseURL: '',
+    baseURL: 'https://star-dust.shop',
     headers: {
       accept: "application/json",
       "Content-Type": "application/json",
@@ -14,4 +14,8 @@ export const statDustAPI = axios.create({
 
 export async function getDusts(university) {
     return await statDustAPI.get(`/map/${university}`)
+}
+
+export async function postcatchedDust() {
+  return await statDustAPI.post(`/catch/dust`,{dustNum})
 }

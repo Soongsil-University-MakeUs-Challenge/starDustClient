@@ -14,9 +14,9 @@ export default function Map() {
         <div className={styles.stardust_container}>
             <div className={styles.stardust_black}></div>
             <div className={styles.stardust_yellow}></div>
-            <div className={styles.stardust_blue}></div>
+            <div className={styles.stardust_green}></div>
             <div className={styles.stardust_purple}></div>
-            <div className={styles.stardust_red}></div>
+            <div className={styles.stardust_white}></div>
         
         </div>
 

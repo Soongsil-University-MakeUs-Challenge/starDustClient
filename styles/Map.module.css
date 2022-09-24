@@ -23,9 +23,9 @@
   content: url(../public/wanted-stardust-yellow.png);
   margin: 5px;
 }
-.stardust_blue {
+.stardust_green {
   display: inline-block;
-  content: url(../public/wanted-stardust-blue.png);
+  content: url(../public/wanted-stardust-green.svg);
   margin: 5px;
 }
 .stardust_purple {
@@ -33,9 +33,9 @@
   content: url(../public/wanted-stardust-purple.png);
   margin: 5px;
 }
-.stardust_red {
+.stardust_white {
   display: inline-block;
-  content: url(../public/wanted-stardust-red.png);
+  content: url(../public/wanted-stardust-white.svg);
   margin: 5px;
 }
 .map_logo {
