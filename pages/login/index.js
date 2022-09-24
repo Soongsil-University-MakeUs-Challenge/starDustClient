@@ -41,7 +41,7 @@ export default function Login() {
       setNicknameError("")
     }
     
-    if( phoneNumber.length == 0) {
+    if(phoneNumber.length == 0) {
       setPhoneNumberError("휴대폰번호가 올바르지 않아요")
     } else {
       setPhoneNumberError("")
