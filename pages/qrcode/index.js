@@ -10,25 +10,19 @@ export default function QrcodeScanner () {
 
     return (
         <>
-       <div>
-        {hasRendered && (
-        <QrReader
-        onResult = {(result, error) =>{
-        if(!result) {
-            setData(result?.text);
-            console.log(result?.text);
-        }
-        if(!error) {
-            console.info(error);
-        }
-        }}
-        styles={{width : '100%'}}>
-        </QrReader>
+            {hasRendered && (
+                <QrReader
+                    onResult={(result, error) => {
+                    if (!!result) {
+                        setData(result?.text);
+                    }
+
+                    if (!!error) {
+                        console.info(error);
+                    } }}
+                    style={{ width: '100%' }} />
             )}
-    
-    </div>
-    <p>{data}</p>
-        
-    </>
+             <p>{data}</p>
+        </>
     )
 }

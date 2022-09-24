@@ -1,13 +1,14 @@
 .map {
-  min-height: 100vh;
-  max-width: 100vh;
 }
 
 .container {
   /*overflow: scroll;*/
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
   max-width: 500px;
   padding: 20px 0;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .send_location {
@@ -18,4 +19,44 @@
   right: 20px;
   content: url(../public/img_send_location.png);
   z-index: 2;
+}
+
+.dust_box {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  z-index: 2;
+}
+
+.dust_black {
+  width: 80px;
+  height: 80px;
+  content: url(../public/img-dust-black.svg);
+}
+
+.dust_white {
+  width: 80px;
+  height: 80px;
+  content: url(../public/img-dust-white.svg);
+}
+
+.dust_green {
+  width: 80px;
+  height: 80px;
+  align-self: flex-end;
+  content: url(../public/img-dust-green.svg);
+}
+
+.dust_orange {
+  width: 80px;
+  height: 80px;
+  align-self: flex-end;
+  content: url(../public/img-dust-orange.svg);
+}
+
+.dust_purple {
+  width: 80px;
+  height: 80px;
+  align-self: flex-end;
+  content: url(../public/img-dust-purple.svg);
 }
