@@ -13,5 +13,9 @@ export const statDustAPI = axios.create({
 });
 
 export async function getDusts(university) {
-    return await statDustAPI.get(`/map/${university}`)
+  return await statDustAPI.get(`/map/${university}`)
+}
+
+export async function sendDustLocation(latitude, longitude) {
+  return await statDustAPI.post('/dust/location', { latitude, longitude })
 }
