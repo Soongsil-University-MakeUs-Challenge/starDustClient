@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { totalText } from "../constant";
-import Link from "next/link";
 
 export default function Home() {
   const [outputText, setOutputText] = useState(""); //출력될 텍스트를 저장할 변수 만들어주기
   const [count, setCount] = useState(0); // 글자 수 카운터 변수
   const scrollRef = useRef();
 
-  console.log(process.env.NEXT_PUBLIC_MAP_KEY)
+  // console.log(process.env.NEXT_PUBLIC_MAP_KEY)
 
   useEffect(() => {
     const textInterval = setInterval(() => {
@@ -43,7 +42,9 @@ export default function Home() {
         <div className={styles.logo_img} />
         <div className={styles.content}>{outputText}</div>
       </div>
-      <div className={styles.skipBtn}><Link href="/../login">SKIP{">"}</Link></div>
+      <div className={styles.skipBtn}>
+        <a href="/../login">SKIP{">"}</a>
+      </div>
     </div>
   );
 }
