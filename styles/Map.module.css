@@ -15,27 +15,52 @@
 
 .stardust_black {
   display: inline-block;
-  content: url(../public/wanted-stardust-black.png);
+  content: url(../public/wanted-stardust-black.svg);
+  margin: 5px;
+}
+.catched_stardust_black {
+  display: inline-block;
+  content: url(../public/catched-stardust-black.svg);
   margin: 5px;
 }
 .stardust_yellow {
   display: inline-block;
-  content: url(../public/wanted-stardust-yellow.png);
+  content: url(../public/wanted-stardust-yellow.svg);
   margin: 5px;
 }
-.stardust_blue {
+.catched_stardust_yellow {
   display: inline-block;
-  content: url(../public/wanted-stardust-blue.png);
+  content: url(../public/catched-stardust-yellow.svg);
+  margin: 5px;
+}
+.stardust_green {
+  display: inline-block;
+  content: url(../public/wanted-stardust-green.svg);
+  margin: 5px;
+}
+.catched_stardust_green {
+  display: inline-block;
+  content: url(../public/catched-stardust-green.svg);
   margin: 5px;
 }
 .stardust_purple {
   display: inline-block;
-  content: url(../public/wanted-stardust-purple.png);
+  content: url(../public/wanted-stardust-purple.svg);
   margin: 5px;
 }
-.stardust_red {
+.catched_stardust_purple {
   display: inline-block;
-  content: url(../public/wanted-stardust-red.png);
+  content: url(../public/catched-stardust-purple.svg);
+  margin: 5px;
+}
+.stardust_white {
+  display: inline-block;
+  content: url(../public/wanted-stardust-white.svg);
+  margin: 5px;
+}
+.catched_stardust_white {
+  display: inline-block;
+  content: url(../public/catched-stardust-white.svg);
   margin: 5px;
 }
 .map_logo {
