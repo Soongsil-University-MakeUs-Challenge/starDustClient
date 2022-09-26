@@ -15,27 +15,27 @@
 
 .stardust_black {
   display: inline-block;
-  content: url(../public/wanted-stardust-black.png);
+  content: url(../public/wanted-stardust-black.svg);
   margin: 5px;
 }
 .stardust_yellow {
   display: inline-block;
-  content: url(../public/wanted-stardust-yellow.png);
+  content: url(../public/wanted-stardust-yellow.svg);
   margin: 5px;
 }
-.stardust_blue {
+.stardust_green {
   display: inline-block;
-  content: url(../public/wanted-stardust-blue.png);
+  content: url(../public/wanted-stardust-green.svg);
   margin: 5px;
 }
 .stardust_purple {
   display: inline-block;
-  content: url(../public/wanted-stardust-purple.png);
+  content: url(../public/wanted-stardust-purple.svg);
   margin: 5px;
 }
-.stardust_red {
+.stardust_white {
   display: inline-block;
-  content: url(../public/wanted-stardust-red.png);
+  content: url(../public/wanted-stardust-white.svg);
   margin: 5px;
 }
 .map_logo {
