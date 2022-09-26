@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { func } from "prop-types";
 import { useEffect, useRef, useState } from "react";
-import { login } from "../../apis";
+import { login, starDustAPI } from "../../apis";
 import styles from "../../styles/Login.module.css";
 import { useRouter } from "next/router";
+import { postuserLogin } from "../../apis/service";
 
 export default function Login() {
   const router = useRouter();
@@ -69,9 +70,21 @@ export default function Login() {
     // if (nicknameError.length > 0 || phoneNumberError.length > 0) return;
 
     if (isValidate) {
-      // const response = await login(codeNumber, phoneNumber)
-      setIsLoginSuccess((prev) => !prev);
-    } else {
+      const response = await postuserLogin(nickname, phoneNumber, "SSU");
+      console.log(response);
+      if (response.status == 200 && response.data.code == 200) {
+        localStorage.setItem("jwt", response.data.result.userJwt);
+        starDustAPI.defaults.headers["X-ACCESS-TOKEN"] =
+          response.data.result.userJwt;
+        if (response.data.result.user) {
+          router.push("/../map");
+        } else {
+          router.push("/../staff-map");
+        }
+      } else {
+        alert("로그인에 실패했어요,,,");
+      }
+      // setIsLoginSuccess((prev) => !prev);
     }
   };
 
