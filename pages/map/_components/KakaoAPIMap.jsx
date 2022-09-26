@@ -14,7 +14,7 @@ const dustMapper = {
 };
 
 
-export const KakaoAPIMap = ({dusts}) => { //{dusts}
+export const KakaoAPIMap = ({dusts}) => {
   const [myLocation, setMyLocation] = useState("");
   
 
@@ -43,7 +43,7 @@ export const KakaoAPIMap = ({dusts}) => { //{dusts}
       center={{ lat: 37.496313, lng: 126.957037 }}
       style={{ width: "100%", height: "100vh" }}
     >
-      {dusts.map((dust) => {
+      {dusts && dusts.map((dust) => {
         return (
           !dust.caught&&(
           <CustomOverlayMap

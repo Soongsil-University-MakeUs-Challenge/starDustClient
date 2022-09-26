@@ -37,21 +37,21 @@ export default function Map() {
             <div className={styles.stardust_container}>
             {dusts.map((dust) => {
             if(dust.dustId==1) {
-                return (<div className={dust.caught ? styles.catched_stardust_black : styles.stardust_black} />)
+                return (<div key={dust.dustId} className={dust.caught ? styles.catched_stardust_black : styles.stardust_black} />)
             }
             else if(dust.dustId==2) {
-                return (<div className={dust.caught ? styles.catched_stardust_white : styles.stardust_white } /> );
+                return (<div key={dust.dustId} className={dust.caught ? styles.catched_stardust_white : styles.stardust_white } /> );
             }
             else if(dust.dustId==3)
             {
-                return (<div className={dust.caught ? styles.catched_stardust_green : styles.stardust_green } /> );
+                return (<div key={dust.dustId} className={dust.caught ? styles.catched_stardust_green : styles.stardust_green } /> );
             }
             else if(dust.dustId==4){
-                return (<div className={dust.caught ? styles.catched_stardust_yellow : styles.stardust_yellow } /> );
+                return (<div key={dust.dustId} className={dust.caught ? styles.catched_stardust_yellow : styles.stardust_yellow } /> );
             }
             else {
-                console.log(5);
-                return (<div className={dust.caught ? styles.catched_stardust_purple : styles.stardust_purple } /> );
+                
+                return (<div key={dust.dustId} className={dust.caught ? styles.catched_stardust_purple : styles.stardust_purple } /> );
             }
             })};
             </div>
