@@ -7,7 +7,7 @@ export function getToken() {
   return "";
 }
 
-export const statDustAPI = axios.create({
+export const starDustAPI = axios.create({
   baseURL: "https://star-dust.shop",
   headers: {
     accept: "application/json",
@@ -18,21 +18,29 @@ export const statDustAPI = axios.create({
 });
 
 export async function getDusts(university) {
-  return await statDustAPI.get(`/map/${university}`);
+  return await starDustAPI.get(`/map/${university}`);
 }
 
 export async function sendDustLocation(latitude, longitude) {
-  return await statDustAPI.post("/dust/location", { latitude, longitude });
+  return await starDustAPI.post("/dust/location", { latitude, longitude });
 }
 
 export async function postcatchedDust(dustNum) {
-  return await statDustAPI.post(`/catch/dust`, { dustNum });
+  return await starDustAPI.post(`/catch/dust`, { dustNum });
 }
 
 export async function postuserLogin(nickname, phoneNum, univCode) {
-  return await statDustAPI.post("/users/login", {
+  return await starDustAPI.post("/users/login", {
     nickname: nickname,
     phoneNum: phoneNum,
     univCode: univCode,
   });
+}
+
+export async function startTimer() {
+  return await starDustAPI.post(`/users/timer`);
+}
+
+export async function getRanking() {
+  return await starDustAPI.get(`/ranking/SSU`);
 }
