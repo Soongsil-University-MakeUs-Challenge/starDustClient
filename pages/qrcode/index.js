@@ -39,7 +39,6 @@ export default function QrcodeScanner() {
               if (Number(code) != NaN) {
                 postDustNum(Number(result.text));
               }
-
               setData(result?.text);
             }
             if (!!error) {

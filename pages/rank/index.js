@@ -3,9 +3,8 @@ import styles from "../../styles/Rank.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { getRanking } from "../../apis/service";
-import Ranker from "./_components/Ranker";
 
-export default function Rank() {
+export const Rank = () => {
   const router = useRouter();
   const [rankers, setRankers] = useState([]);
 
@@ -46,10 +45,22 @@ export default function Rank() {
           {/* 여기를 컨포넌트로 만들고, 리스트의 map 함수를 이용해 개수만큼 Ranker 컴포넌트를 그려줘요 */}
           {rankers &&
             rankers.map((ranker, index) => {
-              return <Ranker key={index} ranker={ranker} rank={index} />;
+              return (
+                <>
+                  <div className={styles.ranking}>
+                    <div className={styles.li_1}>{index + 1}</div>
+                    <div
+                      className={styles.li_2}
+                    >{`${ranker.nickname} ${ranker.lastNum}`}</div>
+                    <div className={styles.li_3}>{ranker.playTime}</div>
+                  </div>
+                </>
+              );
             })}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Rank;
