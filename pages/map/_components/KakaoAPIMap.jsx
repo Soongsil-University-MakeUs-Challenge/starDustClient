@@ -37,25 +37,48 @@ export const KakaoAPIMap = ({dusts}) => {
     const { latitude, longitude } = myLocation;
     console.log(latitude, longitude);
   });
+  useEffect(()=> {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src=`//dapi.kakao.com/v2/maps/sdk.js?appkey=1664a34e52ea5802af4d289cbdeef3ed&libraries=services&autoload=false`;
+    document.head.appendChild(script);
+
+    script.addEventListener("load",()=>{
+      window.kakao.maps.load(()=>{
+        const mapContainer = document.getElementById("map");
+        const mapOption = {
+          center : new window.kakao.maps.LatLng(37.496313, 126.957037 ),
+          level : 3,
+        };
+        
+        const map = new window.kakao.maps.Map(mapContainer, mapOption);
+        {dusts && dusts.map((dust) => {
+          var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+              imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+              imageOption = {offset: new kakao.maps.Point(27, 69)};
+          
+          if(!dust.caught) {
+            let markerPosition = new kakao.maps.LatLng(dust.latitude, dust.longitude);
+            let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+            let marker = new kakao.maps.Marker({
+              position : markerPosition,
+              image :markerImage
+            });
+            marker.setMap(map);
+          }
+          })}    
+      })
+    });
+  },[])
+
 
   return (
-    <Map
-      center={{ lat: 37.496313, lng: 126.957037 }}
+    <div id="map"
+      
       style={{ width: "100%", height: "100vh" }}
     >
-      {dusts && dusts.map((dust) => {
-        return (
-          !dust.caught&&(
-          <CustomOverlayMap
-            key={dust.dustId}
-            position={{ lat: dust.latitude, lng: dust.longitude }}
-          >
-            <div className={dustMapper[dust.dustId]}></div>
-          </CustomOverlayMap>
-          )
-        );
-      })}
-    </Map>
+      
+    </div>
   );
 };
 
