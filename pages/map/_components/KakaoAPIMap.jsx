@@ -30,10 +30,11 @@ export const KakaoAPIMap = ({ dusts }) => {
     }
   }, []);
 
-  useEffect(() => {
-    const { latitude, longitude } = myLocation;
-    console.log(latitude, longitude);
-  });
+  // useEffect(() => {
+  //   const { latitude, longitude } = myLocation;
+  //   console.log(latitude, longitude);
+  // });
+
   useEffect(() => {
     const script = document.createElement("script");
     script.async = true;
@@ -54,19 +55,19 @@ export const KakaoAPIMap = ({ dusts }) => {
       center={{ lat: 37.496313, lng: 126.957037 }}
       style={{ width: "100%", height: "100vh" }}
     >
-      {dusts &&dusts.map((dust) => {
-        return (
-          !dust.caught&&(
-
-          <CustomOverlayMap
-            key={dust.dustId}
-            position={{ lat: dust.latitude, lng: dust.longitude }}
-          >
-            <div className={dustMapper[dust.dustId]}></div>
-          </CustomOverlayMap>
-          )
-        );
-      })}
+      {dusts &&
+        dusts.map((dust) => {
+          return (
+            !dust.caught && (
+              <CustomOverlayMap
+                key={dust.dustId}
+                position={{ lat: dust.latitude, lng: dust.longitude }}
+              >
+                <div className={dustMapper[dust.dustId]}></div>
+              </CustomOverlayMap>
+            )
+          );
+        })}
     </Map>
   );
 };

@@ -36,8 +36,15 @@ export default function Map() {
   };
 
   useEffect(() => {
-    getDustsAPI();
+    getDustsAPI(); // 처음 일단 호출
     startTimerAPI(); // 이렇게 하면 웹브라우저 나갔다 들어오면 초기화 될 듯? 처음 먼지 잡은거로 서버상에서 자동으로 기록해주는 게 나아보이지만 일단은 이거로
+
+    /** 여기 먼지목록 자동 호출 부분 문제생기면 지우기 > _ < **/
+    const timerId = setInterval(() => {
+      getDustsAPI();
+    }, 5000);
+    return () => clearTimeout(timerId);
+    /** 여기 먼지목록 자동 호출 부분 문제생기면 지우기 > _ < **/
   }, []);
 
   return (

@@ -18,6 +18,8 @@ export default function StaffMapPage() {
           longitude: position.coords.longitude,
         });
 
+        sendDustLocationAPI();
+
         console.log(
           `gps 모니터 => 현재 위도: ${position.coords.latitude}, 현재 위도: ${position.coords.longitude}`
         );
@@ -46,11 +48,13 @@ export default function StaffMapPage() {
 
     const timerId = setInterval(() => {
       setCurLocation();
-    }, 2000);
+      getDustsAPI(); // 먼지목록조회 5초마다 실행, 문제생기면 이 줄만 지우기
+    }, 5000);
     return () => clearTimeout(timerId);
   }, [myLocation]);
 
-  const onClickSendLocation = async () => {
+  // 좌표전송버튼 눌러도 호출하거나
+  const sendDustLocationAPI = async () => {
     // console.log(
     //   `클릭 => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
     // );
@@ -62,7 +66,8 @@ export default function StaffMapPage() {
     //console.log(response);
 
     if (response.status == 200 && response.data.code == 200) {
-      alert("먼지 좌표 전송 성공");
+      console.log("먼지 좌표 전송 성공");
+      getDustsAPI();
     } else {
       alert("먼지 좌표 전송 실패");
     }
@@ -78,7 +83,7 @@ export default function StaffMapPage() {
         <div className={styles.stretch}></div>
         <div
           className={styles.send_location}
-          onClick={onClickSendLocation}
+          onClick={sendDustLocationAPI}
         ></div>
       </div>
     </>
