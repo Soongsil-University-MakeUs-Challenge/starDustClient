@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { func } from "prop-types";
 import { useEffect, useRef, useState } from "react";
-import { login } from "../../apis";
+import { login, starDustAPI } from "../../apis";
 import styles from "../../styles/Login.module.css";
 import { useRouter } from "next/router";
+import { postuserLogin } from "../../apis/service";
 
 export default function Login() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function Login() {
   };
 
   const onClickLogin = async () => {
-    console.log(nickname + phoneNumber);
+    // console.log(nickname + phoneNumber);
     const regexNickname = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|]+$/;
     const regexPhoneNumberLength = /^[0-9]+$/;
     const regexPhoneNumber = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
@@ -69,9 +70,25 @@ export default function Login() {
     // if (nicknameError.length > 0 || phoneNumberError.length > 0) return;
 
     if (isValidate) {
-      // const response = await login(codeNumber, phoneNumber)
-      setIsLoginSuccess((prev) => !prev);
-    } else {
+      const response = await postuserLogin(nickname, phoneNumber, "SSU");
+
+      if (response.status == 200 && response.data.code == 200) {
+        // console.log(response.data.result);
+
+        if (typeof window !== "undefined") {
+          localStorage.setItem("jwt", response.data.result.userJwt);
+        }
+
+        starDustAPI.defaults.headers["X-ACCESS-TOKEN"] =
+          response.data.result.userJwt;
+        if (response.data.result.user) {
+          setIsLoginSuccess((prev) => !prev);
+        } else {
+          router.push("/../staff-map");
+        }
+      } else {
+        alert("로그인에 실패했어요,,,");
+      }
     }
   };
 
