@@ -87,7 +87,6 @@ export default function Map() {
             );
           }
         })}
-        ;
       </div>
 
       <div className={styles.map_logo}></div>
