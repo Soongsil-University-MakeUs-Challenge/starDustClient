@@ -40,3 +40,7 @@ export async function postuserLogin(nickname, phoneNum, univCode) {
 export async function startTimer() {
   return await starDustAPI.post(`/users/timer`);
 }
+
+export async function getRanking() {
+  return await starDustAPI.get(`/ranking/SSU`);
+}

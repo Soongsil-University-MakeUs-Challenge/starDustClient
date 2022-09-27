@@ -113,7 +113,10 @@ export default function Map() {
         ;
       </div>
 
-      <div className={styles.map_logo}></div>
+      <div
+        className={styles.map_logo}
+        onClick={() => router.push("/../rank")}
+      ></div>
       <div className={styles.button_container}>
         <div className={styles.location_btn}></div>
         <div className={styles.refresh_btn} onClick={() => getDustsAPI()}></div>

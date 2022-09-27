@@ -20,12 +20,12 @@ export default function StaffMapPage() {
 
         sendDustLocationAPI();
 
-        console.log(
-          `gps 모니터 => 현재 위도: ${position.coords.latitude}, 현재 위도: ${position.coords.longitude}`
-        );
-        console.log(
-          `좌표 state => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
-        );
+        // console.log(
+        //   `gps 모니터 => 현재 위도: ${position.coords.latitude}, 현재 위도: ${position.coords.longitude}`
+        // );
+        // console.log(
+        //   `좌표 state => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
+        // );
       });
     } else {
       console.log("먼지 좌표 업데이트 실패");
@@ -48,7 +48,6 @@ export default function StaffMapPage() {
 
     const timerId = setInterval(() => {
       setCurLocation();
-      getDustsAPI(); // 먼지목록조회 5초마다 실행, 문제생기면 이 줄만 지우기
     }, 5000);
     return () => clearTimeout(timerId);
   }, [myLocation]);
@@ -67,7 +66,7 @@ export default function StaffMapPage() {
 
     if (response.status == 200 && response.data.code == 200) {
       console.log("먼지 좌표 전송 성공");
-      getDustsAPI();
+      getDustsAPI(); // 자신 좌표 업데이트할 때마다 다시 먼지목록 API 호출
     } else {
       alert("먼지 좌표 전송 실패");
     }
