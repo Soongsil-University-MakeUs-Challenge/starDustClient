@@ -1,15 +1,14 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
 import KakaoAPIMap from "./_components/StaffMap";
 import styles from "../../styles/StaffMap.module.css";
 import { useState, useEffect } from "react";
-import { sendDustLocation } from "../../apis/service";
+import { getDusts, sendDustLocation } from "../../apis/service";
 
 export default function StaffMapPage() {
   const [myLocation, setMyLocation] = useState({
     latitude: 37.496313,
     longitude: 126.957037,
   });
+  const [dusts, setDusts] = useState([]);
 
   const setCurLocation = () => {
     if (navigator.geolocation) {
@@ -19,20 +18,32 @@ export default function StaffMapPage() {
           longitude: position.coords.longitude,
         });
 
-        // console.log(
-        //   `타이머 => 현재 위도: ${position.coords.latitude}, 현재 위도: ${position.coords.longitude}`
-        // );
-
         console.log(
-          `타이머 => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
+          `gps 모니터 => 현재 위도: ${position.coords.latitude}, 현재 위도: ${position.coords.longitude}`
+        );
+        console.log(
+          `좌표 state => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
         );
       });
     } else {
-      console.log("먼지좌표 업데이트 실패");
+      console.log("먼지 좌표 업데이트 실패");
+    }
+  };
+
+  const getDustsAPI = async () => {
+    const response = await getDusts("SSU");
+    console.log(response);
+
+    if (response.status == 200) {
+      if (response.data.code == 200) {
+        setDusts(response.data.result.dustInfo);
+      }
     }
   };
 
   useEffect(() => {
+    getDustsAPI();
+
     const timerId = setInterval(() => {
       setCurLocation();
     }, 2000);
@@ -40,15 +51,15 @@ export default function StaffMapPage() {
   }, [myLocation]);
 
   const onClickSendLocation = async () => {
-    console.log(
-      `클릭 => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
-    );
+    // console.log(
+    //   `클릭 => 현재 위도: ${myLocation.latitude}, 현재 위도: ${myLocation.longitude}`
+    // );
     const response = await sendDustLocation(
       myLocation.latitude,
       myLocation.longitude
     );
 
-    console.log(response);
+    //console.log(response);
 
     if (response.status == 200 && response.data.code == 200) {
       alert("먼지 좌표 전송 성공");
@@ -59,7 +70,7 @@ export default function StaffMapPage() {
 
   return (
     <>
-      <KakaoAPIMap />
+      <KakaoAPIMap dusts={dusts} />
       <div className={styles.container}>
         <div className={styles.dust_box}>
           <div className={styles.dust_black}></div>

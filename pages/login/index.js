@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { func } from "prop-types";
-import { useEffect, useRef, useState } from "react";
-import { login, starDustAPI } from "../../apis";
+import { useState } from "react";
+import { starDustAPI } from "../../apis/service";
 import styles from "../../styles/Login.module.css";
 import { useRouter } from "next/router";
 import { postuserLogin } from "../../apis/service";
