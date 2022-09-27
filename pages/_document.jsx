@@ -28,7 +28,6 @@ export default class MyDocument extends Document {
           type="text/javascript"
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=1664a34e52ea5802af4d289cbdeef3ed&libraries=services&autoload=false`}
           defer
-
         />
         <body>
           <Main />
