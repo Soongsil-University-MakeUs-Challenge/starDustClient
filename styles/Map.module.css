@@ -85,7 +85,7 @@
   bottom: 50px;
   left: 20px;
   content: url(../public/img_rank.svg);
-  z-index: 2;
+  z-index: 4;
 }
 .button_container {
   position: fixed;
