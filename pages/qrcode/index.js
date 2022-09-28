@@ -21,7 +21,7 @@ export default function QrcodeScanner() {
       if (response.data.code == 200) {
         console.log("DONE");
         setHasRendered(false);
-        router.replace("/../map");
+        router.push("/../map");
       }
     }
   };
