@@ -19,21 +19,19 @@ export default function Map() {
   const getDustsAPI = async () => {
     const response = await getDusts("SSU");
 
-    if (response.status == 200) {
-      if (response.data.code == 200) {
+    if (response.status === 200) {
+      if (response.data.code === 200) {
         setDusts(response.data.result.dustInfo);
       }
     }
 
-    console.log(response);
     for (let i = 0; i < 5; i++) {
       if (response.data.result.dustInfo[i].caught == true) {
         count++;
       }
     }
-    if (count == 5) {
+    if (count === 5) {
       onCatchChange();
-      console.log(count);
     }
   };
 
