@@ -39,7 +39,7 @@ export default function QrcodeScanner() {
               if (Number(code) != NaN) {
                 postDustNum(Number(result.text));
               }
-              setData(result?.text);
+              // setData(result?.text);
             }
             if (!!error) {
               //   console.info(error);
@@ -49,7 +49,7 @@ export default function QrcodeScanner() {
           style={{ width: "100%" }}
         />
       )}
-      <p>{data}</p>
+      {/* <p>{data}</p> */}
     </>
   );
 }
