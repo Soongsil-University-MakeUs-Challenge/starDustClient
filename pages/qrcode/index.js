@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { QrReader } from "react-qr-reader";
 import { postcatchedDust } from "../../apis/service";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function QrcodeScanner() {
   const router = useRouter();
   const [data, setData] = useState("No result");
   const [hasRendered, setHasRendered] = useState(false);
+
+  const mapRef = useRef(null);
+
   useEffect(() => {
     setHasRendered(true);
 
-    return () => setHasRendered(false);
+    return () => {
+      setHasRendered(false);
+      mapRef.current?.stopCamera();
+    };
   }, []);
 
   const postDustNum = async (dustNum) => {
@@ -30,6 +37,7 @@ export default function QrcodeScanner() {
     <>
       {hasRendered && (
         <QrReader
+          ref={mapRef}
           constraints={{
             facingMode: "environment",
           }}
@@ -49,6 +57,7 @@ export default function QrcodeScanner() {
           style={{ width: "100%" }}
         />
       )}
+      <Link href={"map"}>adsjfkjahsfdlj</Link>
       <p>{data}</p>
     </>
   );
