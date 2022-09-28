@@ -24,6 +24,7 @@ export default function QrcodeScanner() {
         router.push("/../map");
       }
     }
+    else alert("먼지 잡기 실패");
   };
 
   return (
