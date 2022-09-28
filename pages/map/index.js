@@ -9,15 +9,29 @@ export default function Map() {
   const router = useRouter();
   const [dusts, setDusts] = useState([]);
 
-  //API호출 (getDustAPI)
+  const [isCatchSuccess, setIsCatchSuccess] = useState(false);
+
+  let count = 0;
+  const onCatchChange = () => {
+    setIsCatchSuccess((prev) => !prev);
+  };
+
   const getDustsAPI = async () => {
     const response = await getDusts("SSU");
-    console.log(response);
 
-    if (response.status == 200) {
-      if (response.data.code == 200) {
+    if (response.status === 200) {
+      if (response.data.code === 200) {
         setDusts(response.data.result.dustInfo);
       }
+    }
+
+    for (let i = 0; i < 5; i++) {
+      if (response.data.result.dustInfo[i].caught == true) {
+        count++;
+      }
+    }
+    if (count === 5) {
+      onCatchChange();
     }
   };
 
@@ -49,6 +63,13 @@ export default function Map() {
 
   return (
     <>
+      {isCatchSuccess && (
+        <div className={styles.complete}>
+          미션
+          <br />
+          컴플릿뜨
+        </div>
+      )}
       <KakaoAPIMap dusts={dusts} />
 
       <div className={styles.stardust_container}>

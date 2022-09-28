@@ -20,13 +20,14 @@
   top: 25px;
   right: 32px;
   position: fixed;
+  object-fit: fill;
 }
 
 .title {
   font-family: "NeoDunggeunmo";
   font-size: 30px;
   color: #ffffff;
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 .element {
@@ -70,7 +71,7 @@
 .li_1 {
   font-size: 32px;
   flex-grow: 2;
-  padding: 18px 0;
+  padding: 10px 0;
   color: yellow;
   padding-left: 15px;
 }
@@ -78,7 +79,7 @@
 .li_2 {
   font-size: 20px;
   flex-grow: 2;
-  padding: 18px 0;
+  padding: 10px 0;
 
   line-height: 30px;
 }
@@ -87,7 +88,7 @@
   font-size: 20px;
   flex-grow: 6;
   text-align: right;
-  padding: 18px 0;
+  padding: 10px 0;
   line-height: 30px;
 
   padding-right: 15px;
