@@ -48,7 +48,7 @@ export default function StaffMapPage() {
 
     const timerId = setInterval(() => {
       setCurLocation();
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timerId);
   }, [myLocation]);
 
