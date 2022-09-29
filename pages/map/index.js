@@ -21,18 +21,23 @@ export default function Map() {
 
     if (response.status === 200) {
       if (response.data.code === 200) {
+        // console.log(response.data);
         setDusts(response.data.result.dustInfo);
+        // console.log(
+        //   response.data.result.dustInfo.every((item) => item.cauthgt === true)
+        // );
+        // setIsCatchSuccess();
       }
     }
 
-    for (let i = 0; i < 5; i++) {
-      if (response.data.result.dustInfo[i].caught == true) {
-        count++;
-      }
-    }
-    if (count === 5) {
-      onCatchChange();
-    }
+    // for (let i = 0; i < 5; i++) {
+    //   if (response.data.result.dustInfo[i].caught == true) {
+    //     count++;
+    //   }
+    // }
+    // if (count === 5) {
+    //   onCatchChange();
+    // }
   };
 
   const startTimerAPI = async () => {
@@ -63,13 +68,13 @@ export default function Map() {
 
   return (
     <>
-      {isCatchSuccess && (
+      {/* {isCatchSuccess && (
         <div className={styles.complete}>
           미션
           <br />
           컴플릿뜨
         </div>
-      )}
+      )} */}
       <KakaoAPIMap dusts={dusts} />
 
       <div className={styles.stardust_container}>
@@ -138,13 +143,13 @@ export default function Map() {
         onClick={() => router.push("/../rank")}
       ></div>
       <div className={styles.button_container}>
-        <div className={styles.location_btn}></div>
+        {/* <div className={styles.location_btn}></div>
         <div className={styles.refresh_btn} onClick={() => getDustsAPI()}></div>
         <div className={styles.guide_btn}>
           <Link href="/">
             <a></a>
           </Link>
-        </div>
+        </div> */}
         <div
           className={styles.qr_btn}
           onClick={() => router.push("/../qrcode")}
