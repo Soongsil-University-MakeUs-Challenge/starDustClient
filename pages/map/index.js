@@ -11,7 +11,7 @@ export default function Map() {
 
   const [isCatchSuccess, setIsCatchSuccess] = useState(false);
 
-  let count = 0;
+  // let count = 0;
   const onCatchChange = () => {
     setIsCatchSuccess((prev) => !prev);
   };
@@ -21,12 +21,11 @@ export default function Map() {
 
     if (response.status === 200) {
       if (response.data.code === 200) {
-        // console.log(response.data);
+        console.log(response.data);
         setDusts(response.data.result.dustInfo);
-        // console.log(
-        //   response.data.result.dustInfo.every((item) => item.cauthgt === true)
-        // );
-        // setIsCatchSuccess();
+        setIsCatchSuccess(
+          response.data.result.dustInfo.every((item) => item.caught === true)
+        );
       }
     }
 
@@ -68,13 +67,13 @@ export default function Map() {
 
   return (
     <>
-      {/* {isCatchSuccess && (
+      {isCatchSuccess && (
         <div className={styles.complete}>
           미션
           <br />
           컴플릿뜨
         </div>
-      )} */}
+      )}
       <KakaoAPIMap dusts={dusts} />
 
       <div className={styles.stardust_container}>
